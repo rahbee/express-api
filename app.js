@@ -19,11 +19,11 @@ const debug = Debug(process.env.DEBUG);
 const app = express();
 const MongoStore = connectMongo(session);
 // const debug = Debug('express:app');
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
 
 // debug('Sarting express-appppppp');
 // view engine setup
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -46,13 +46,13 @@ app.use(session({
     })
 }));
 
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: true,
-  sourceMap: true
-}));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(sassMiddleware({
+//   src: path.join(__dirname, 'public'),
+//   dest: path.join(__dirname, 'public'),
+//   indentedSyntax: true,
+//   sourceMap: true
+// }));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 
