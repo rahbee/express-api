@@ -25,6 +25,8 @@ exports.postLogin = (req, res, next) => {
         return res.send(errors);
     }
 
+    debug('session: ', req.session);
+
 
     const user = new User({
         username: req.body.username,

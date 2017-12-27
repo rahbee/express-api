@@ -18,6 +18,11 @@ const debug = Debug(process.env.DEBUG);
 
 const app = express();
 const MongoStore = connectMongo(session);
+
+/**
+ * API keys and Passport configuration.
+ */
+const passportConfig = require('./config/passport');
 // const debug = Debug('express:app');
 // app.set('views', path.join(__dirname, 'views'));
 
