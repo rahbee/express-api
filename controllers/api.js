@@ -7,8 +7,8 @@ const debug = Debug(process.env.DEBUG);
  * GET /dummy
  * Get Dummy Response
  */
-exports.getDummy = (req, res) => {
-    res.json({dummy: "My Dummy Response!!"});
+exports.getLogin = (req, res) => {
+    return res.json({success: "You are not loogedin bro!"});
 };
 
 /**

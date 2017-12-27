@@ -10,6 +10,7 @@ import session from 'express-session';
 import flash from 'express-flash';
 import expressValidator from 'express-validator';
 import connectMongo from 'connect-mongo';
+import passport from 'passport';
 // import favicon from 'serve-favicon';
 
 import index from './routes/index';
@@ -22,7 +23,7 @@ const MongoStore = connectMongo(session);
 /**
  * API keys and Passport configuration.
  */
-const passportConfig = require('./config/passport');
+
 // const debug = Debug('express:app');
 // app.set('views', path.join(__dirname, 'views'));
 
@@ -50,6 +51,15 @@ app.use(session({
         clear_interval: 3600
     })
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
+  // res.redirect(req.session.returnTo || '/');
+  debug('Google Login success Response: ', res);
+});
 
 // app.use(sassMiddleware({
 //   src: path.join(__dirname, 'public'),

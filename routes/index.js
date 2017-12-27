@@ -1,10 +1,13 @@
 import express from 'express';
 const router = express.Router();
 import apiController from '../controllers/api';
+import passportConfig from '../config/passport';
 
 /* API */
 /* Dummy API */
-router.get('/dummy', apiController.getDummy);
+// router.get('/dummy', apiController.getDummy);
+
+router.get('/api/get', apiController.getLogin);
 
 /* POST Login */
 /* params: {username:String, password:String} */
