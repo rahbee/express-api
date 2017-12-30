@@ -1,7 +1,7 @@
 import express from 'express';
-const router = express.Router();
 import apiController from '../controllers/api';
-import passportConfig from '../config/passport';
+const router = express.Router();
+
 
 /* API */
 /* Dummy API */

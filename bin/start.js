@@ -1,15 +1,15 @@
-import app from '../app';
 import Debug from 'debug';
 import http from 'http';
 import {} from 'dotenv/config';
 import mongoose from 'mongoose';
+import app from '../app';
 
 const debug = Debug(process.env.DEBUG);
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (Number.isNaN(port)) {
     // named pipe
     return val;
   }
