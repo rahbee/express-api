@@ -11,7 +11,7 @@
     "test": "./node_modules/mocha/bin/mocha --recursive './test/appTest.js' --require babel-register --reporter spec"
   },
   "dependencies": {
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.16.1",
     "connect-mongo": "^2.0.0",
     "cookie-parser": "^1.4.3",
